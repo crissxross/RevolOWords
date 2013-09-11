@@ -1,0 +1,6 @@
+# Comment: ignore libs directory because I'm loading Greensock from a CDN
+.DS_Store
+*.zip
+*.gz
+log/*.log
+libs/
