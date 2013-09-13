@@ -1,5 +1,5 @@
-## README
-
 ### Revolution of Words
 
-An interactive work-in-progress, an e-lit collaboration by runran and crissxross for http://www.remixworx.net
+An interactive work of e-lit. Still a work-in-progress, it's a collaboration by runran and crissxross for http://www.remixworx.net
+
+If you're wondering, [What is E-Lit?](http://eliterature.org/what-is-e-lit/) the Electronic Literature Organization offers a helpful definition.
