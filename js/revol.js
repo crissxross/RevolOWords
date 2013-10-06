@@ -14,7 +14,7 @@ $(function(){
             "We will promote your freedom to consume. Have no fear. We will bathe you in an endless stream of messages that speak to your subconscious, freeing your desire to consume more.",
             "Your liberties have been taken away from you in the name of Freedom. Enjoy the irony - be distracted from revolution by propaganda disguised as entertainment. Are you waiting for the next instalment of your favourite series? Do you feel entertained?",
             "Take two Freedom-inducing tablets every evening before bed. Enjoy the drowsy effect. Wallow in the dream-free dullness. At the start of your workday, take the Freedom-plus tablet, be productive. When the day overwhelms, take your evening pill. Freedom through medication.",
-            "Our Freedom to Chose program will free you from the drudgery of making choices. Leave the little things to us and focus on what really matters.",
+            "Our Freedom to Choose program will free you from the drudgery of making choices. Leave the little things to us and focus on what really matters.",
             "Feel free to opt out at anytime."
         ],
         order: [
