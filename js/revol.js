@@ -103,7 +103,7 @@ $(function(){
         amount = 10,
         indRotation = (360 / amount),
         words = ["Freedom","Order","Natural","Loyalty","Justice","Truth","Equality","Hope","Security","Value"],
-        ghosts = ["#ghost1","#ghost2"],
+        ghosts = ["#ghost1","#ghost2","#ghost3","#ghost4"],
         winHeads = ["#natural","#order","#freedom","#value","#security","#hope","#equality","#truth","#justice","#loyalty"],
         spinPos = [1098,1134,1170,1206,1242,1278,1314,1350,1386,1422],
         element,
@@ -133,7 +133,7 @@ $(function(){
     function startRevolution(){
         var tl = new TimelineMax(),
             currentGhost,
-            ranGhost = Math.floor(Math.random()*2),
+            ranGhost = Math.floor(Math.random()*4),
             oldPic,
             ranSpin = Math.floor(Math.random()*10),
             // select random text from theTexts selected array
