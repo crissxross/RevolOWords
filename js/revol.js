@@ -15,7 +15,10 @@ $(function(){
             "Your liberties have been taken away from you in the name of Freedom. Enjoy the irony - be distracted from revolution by propaganda disguised as entertainment. Are you waiting for the next instalment of your favourite series? Do you feel entertained?",
             "Take two Freedom-inducing tablets every evening before bed. Enjoy the drowsy effect. Wallow in the dream-free dullness. At the start of your workday, take the Freedom-plus tablet, be productive. When the day overwhelms, take your evening pill. Freedom through medication.",
             "Our Freedom to Choose program will free you from the drudgery of making choices. Leave the little things to us and focus on what really matters.",
-            "Feel free to opt out at anytime."
+            "Feel free to opt out at anytime. Opt out of everything that annoys you. Our Special Filtration Application will free you from unnecessary thinking about what is free and what is not. Fear not. Be free.",
+            "Win your Freedom today. Our special Freedom Games Network allows you to play various scenarios to gain your freedom. Join now and gain bonus weapons. Our virtual Freedom Points are tradable in real life. You can help others gain their Freedom.",
+            "Be free of fear. Our fully tested and patented Fear Abatement Medication will free you of all worry. Take the medication as directed, sit back and enjoy the enclosed DVD. No tricks or gimmicks. Trust us to free you of all fears.",
+            "Do you feel trapped in a mundane existence? Do you want to free yourself of feelings of inferiority? Our program includes our patented Expansion Lenses, legal weaponry and special medications. Be the first one on your street to be truly free."
         ],
         order: [
             "Has your country been a subject or an object of history? Do you feel downtrodden, or emulated? Do you fit within the natural order of things? Take stock, it's never too late to take up arms. Order through conflict.",
@@ -73,7 +76,13 @@ $(function(){
             "The drone pilot shifted in his seat. There was a flash on the screen: the explosion. Parts of the building collapsed. The child disappeared. One less terrorist in the making.",
             "In a signature strike, a person is made a target not because of their identity but because of certain signatures - codified justifications for killings in a secure world.",
             "In today's day and age, every computer should be protected. It is best to wear a tin-foil hat while browsing the web. Maybe also surround your computer with talismans or lit candles. Feel secure.",
-            "Feel secure in the knowledge that Home Security is working for you. Our program of drone attacks and targeted assassinations is making your world more secure. Stay glued to your screen and watch from the safety of your home."
+            "Feel secure in the knowledge that Home Security is working for you. Our program of drone attacks and targeted assassinations is making your world more secure. Stay glued to your screen and watch from the safety of your home.",
+            "Purchase some Security today. Be secure in the knowledge that our secrets are keeping you safe. Install the Security Now program on you computer and mobile device and help us to keep you secure and safe from nasty secrets.",
+            "Evil people are trying to compromise the status quo. Our Secure Now Network will help spread the Special Filtration Program to other deserving computers and mobile devices. Protect your friends from malicious security breaches.",
+            "To ensure your security of information, apply our Western Vision Principle Generator, where all seemingly impartial words are vetted through our special filtration software. Do not be taken unawares. Protect your point of view.",
+            "Trust our Secure Investments Program to provide financial security for you and your family. We invest in sure things like armaments and drugs. Sit back and watch your SIP investments grow.",
+            "Your data is safe with us. Our secure offshore servers are guarded 24/7 by an army of nano-bots programmed to confuse data thieves by directing them to less secure servers.",
+            "Our free online International Safety & Security Handbook teaches you how to ensure security for you and your online contacts. Based on the science of Feng Shui you will learn the best placement for your computer and mobile devices."
         ],
         value: [
             "Don't fall into the trap of over-valuing the future. Don't trade your present for an uncertain future. Use our online Modern Age Value System for everyday choices. Trust us to ground you in the present. Contact us now. This is a limited-time offer.",
@@ -83,7 +92,9 @@ $(function(){
             "Language is under threat. Meaning is losing meaning. We offer a helpful guide to what things really mean. Don't contribute to the \"slobber of disconnected vowel noises.\" Be meaningful.",
             "Value International is an online organization that can help people order their values. Values can be traded or changed. Nonsensical trifles or serious matters are given equal weight. Values can be stored for later use, or donated as gifts.",
             "Value speed. Be ecstatic. Keep up with technology. For a premier experience, update and upgrade daily. Follow the instructions, you have nothing to lose.",
-            "All of our products include value-added gifts. Fill out our online questionnaire so we can serve Values that are custom-designed to your needs and desires. Trust our tasty cookies."
+            "All of our products include value-added gifts. Fill out our online questionnaire so we can serve Values that are custom-designed to your needs and desires. Trust our tasty cookies.",
+            "Purchase some Value today. Our Single Button Program (SBP) ensures that what is of Value to you is maintained in your life. Simply fill out our questionnaire and choose the SBP. Keep our Value in your life.",
+            " There is nothing more valuable than peace of mind. Try our new Blinders Program free for the first month. One size fits all. If you do not feel more at ease, return the blinders at no charge. Warning: we accept no responsibility if removing the blinders causes a loss of value in your life."
         ]
     },
         winWords = ["natural","order","freedom","value","security","hope","equality","truth","justice","loyalty"],
