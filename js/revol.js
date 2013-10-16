@@ -103,9 +103,11 @@ $(function(){
         amount = 10,
         indRotation = (360 / amount),
         words = ["Freedom","Order","Natural","Loyalty","Justice","Truth","Equality","Hope","Security","Value"],
-        ghosts = ["#ghost1","#ghost2","#ghost3","#ghost4"],
+        ghosts = ["#e-0","#e-1","#e-2","#e-3","#e-4","#e-5","#e-6","#e-7","#e-8","#e-9"],
+        fghosts = ["#f-0","#f-1","#f-2","#f-3","#f-4","#f-5","#f-6","#f-7","#f-8","#f-9"],
         winHeads = ["#natural","#order","#freedom","#value","#security","#hope","#equality","#truth","#justice","#loyalty"],
         spinPos = [1098,1134,1170,1206,1242,1278,1314,1350,1386,1422],
+        currentGhost,
         element,
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
@@ -132,9 +134,9 @@ $(function(){
     // REVOL ANIMATION
     function startRevolution(){
         var tl = new TimelineMax(),
-            currentGhost,
-            ranGhost = Math.floor(Math.random()*4),
-            oldPic,
+            // currentGhost,
+            ranGhost = Math.floor(Math.random()*10),
+            oldPic = null,
             ranSpin = Math.floor(Math.random()*10),
             // select random text from theTexts selected array
             ranWin = Math.floor(Math.random() * winWordsTotal),
@@ -149,10 +151,12 @@ $(function(){
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
         //fade out any pic that might be in the centre
-        TweenMax.to(ghosts, 0.5, {autoAlpha:0});
+        // TweenMax.to(ghosts, 0.5, {autoAlpha:0});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
 
-        currentGhost = ghosts[ranGhost];
+        // currentGhost = ghosts[ranGhost];
+        currentGhost = fghosts[ranGhost];
+        
 
         // REVOL animation
         tl.to(elemContainer, 5, {rotation:spinPos[ranSpin], ease:Circ.easeOut})
@@ -233,6 +237,8 @@ $(function(){
     function reset(){
         TweenMax.to(winHeads, 0.5, {autoAlpha:0, scale:1, delay:0.5});
         TweenMax.staggerTo([elemContainer, startBtn], 1, {autoAlpha:1, delay:0.5}, 0.5);
+         //fade out any pic that is in the centre
+        TweenMax.to(currentGhost, 0.5, {autoAlpha:0, delay:1});
     }
 
 });
