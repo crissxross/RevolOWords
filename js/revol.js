@@ -103,9 +103,21 @@ $(function(){
         amount = 10,
         indRotation = (360 / amount),
         words = ["Freedom","Order","Natural","Loyalty","Justice","Truth","Equality","Hope","Security","Value"],
-        ghosts = ["#ghost1","#ghost2"],
         winHeads = ["#natural","#order","#freedom","#value","#security","#hope","#equality","#truth","#justice","#loyalty"],
         spinPos = [1098,1134,1170,1206,1242,1278,1314,1350,1386,1422],
+        theGhosts = {
+            equality: ["#e-0","#e-1","#e-2","#e-3","#e-4","#e-5","#e-6","#e-7","#e-8","#e-9"],
+            freedom: ["#f-0","#f-1","#f-2","#f-3","#f-4","#f-5","#f-6","#f-7","#f-8","#f-9"],
+            hope: ["#h-0","#h-1","#h-2","#h-3","#h-4","#h-5","#h-6","#h-7","#h-8","#h-9"],
+            justice: ["#j-0","#j-1","#j-2","#j-3","#j-4","#j-5","#j-6","#j-7","#j-8","#j-9"],
+            loyalty: ["#l-0","#l-1","#l-2","#l-3","#l-4","#l-5","#l-6","#l-7","#l-8","#l-9"],
+            natural: ["#n-0","#n-1","#n-2","#n-3","#n-4","#n-5","#n-6","#n-7","#n-8","#n-9"],
+            order: ["#o-0","#o-1","#o-2","#o-3","#o-4","#o-5","#o-6","#o-7","#o-8","#o-9"],
+            security: ["#s-0","#s-1","#s-2","#s-3","#s-4","#s-5","#s-6","#s-7","#s-8","#s-9"],
+            truth: ["#t-0","#t-1","#t-2","#t-3","#t-4","#t-5","#t-6","#t-7","#t-8","#t-9"],
+            value: ["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"]
+        },
+        currentGhost,
         element,
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
@@ -132,9 +144,9 @@ $(function(){
     // REVOL ANIMATION
     function startRevolution(){
         var tl = new TimelineMax(),
-            currentGhost,
-            ranGhost = Math.floor(Math.random()*2),
-            oldPic,
+            // currentGhost,
+            ranGhost = Math.floor(Math.random()*10),
+            oldPic = null,
             ranSpin = Math.floor(Math.random()*10),
             // select random text from theTexts selected array
             ranWin = Math.floor(Math.random() * winWordsTotal),
@@ -148,11 +160,11 @@ $(function(){
         // set up
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
-        //fade out any pic that might be in the centre
-        TweenMax.to(ghosts, 0.5, {autoAlpha:0});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
 
-        currentGhost = ghosts[ranGhost];
+        currentGhost = theGhosts[winWord][ranGhost];
+        // currentGhost = fghosts[ranGhost];
+        
 
         // REVOL animation
         tl.to(elemContainer, 5, {rotation:spinPos[ranSpin], ease:Circ.easeOut})
@@ -233,6 +245,8 @@ $(function(){
     function reset(){
         TweenMax.to(winHeads, 0.5, {autoAlpha:0, scale:1, delay:0.5});
         TweenMax.staggerTo([elemContainer, startBtn], 1, {autoAlpha:1, delay:0.5}, 0.5);
+         //fade out any pic that is in the centre
+        TweenMax.to(currentGhost, 0.5, {autoAlpha:0, delay:1});
     }
 
 });
