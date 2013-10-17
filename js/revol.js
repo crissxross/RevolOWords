@@ -163,7 +163,8 @@ $(function(){
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
 
         currentGhost = theGhosts[winWord][ranGhost];
-        // currentGhost = fghosts[ranGhost];
+        //for TESTING ONLY:
+        // currentGhost = theGhosts.natural[2];
         
 
         // REVOL animation
@@ -237,7 +238,10 @@ $(function(){
                 }
             }
 
-                deliverText(theTexts[winWord][ranText], 250);
+                deliverText(theTexts[winWord][ranText], 350);
+                //for TESTING ONLY:
+                // deliverText(theTexts.freedom[4], 350);
+
         }
 
     }
@@ -246,7 +250,7 @@ $(function(){
         TweenMax.to(winHeads, 0.5, {autoAlpha:0, scale:1, delay:0.5});
         TweenMax.staggerTo([elemContainer, startBtn], 1, {autoAlpha:1, delay:0.5}, 0.5);
          //fade out any pic that is in the centre
-        TweenMax.to(currentGhost, 0.5, {autoAlpha:0, delay:1});
+        TweenMax.to(currentGhost, 1, {autoAlpha:0, delay:0.75});
     }
 
 });
