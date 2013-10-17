@@ -124,19 +124,16 @@ header {
     left:30px;
     z-index:1;
 /*    overflow:hidden;*/
-/*    display:table;*/
 }
 
 #the-texts p{
-/*    display:table-cell;*/
-/*    vertical-align:middle;*/
     text-align:center;
     position:absolute;
     line-height:1.5;
     width:100%;
     height:100%;
     visibility:hidden;
-    font-size:30px;
+    font-size:28px;
 /*    top:25%;*/
 }
 
