@@ -106,16 +106,16 @@ $(function(){
         winHeads = ["#natural","#order","#freedom","#value","#security","#hope","#equality","#truth","#justice","#loyalty"],
         spinPos = [1098,1134,1170,1206,1242,1278,1314,1350,1386,1422],
         theGhosts = {
-            equality: ["#e-0","#e-1","#e-2","#e-3","#e-4","#e-5","#e-6","#e-7","#e-8","#e-9"],
-            freedom: ["#f-0","#f-1","#f-2","#f-3","#f-4","#f-5","#f-6","#f-7","#f-8","#f-9"],
-            hope: ["#h-0","#h-1","#h-2","#h-3","#h-4","#h-5","#h-6","#h-7","#h-8","#h-9"],
-            justice: ["#j-0","#j-1","#j-2","#j-3","#j-4","#j-5","#j-6","#j-7","#j-8","#j-9"],
-            loyalty: ["#l-0","#l-1","#l-2","#l-3","#l-4","#l-5","#l-6","#l-7","#l-8","#l-9"],
-            natural: ["#n-0","#n-1","#n-2","#n-3","#n-4","#n-5","#n-6","#n-7","#n-8","#n-9"],
-            order: ["#o-0","#o-1","#o-2","#o-3","#o-4","#o-5","#o-6","#o-7","#o-8","#o-9"],
-            security: ["#s-0","#s-1","#s-2","#s-3","#s-4","#s-5","#s-6","#s-7","#s-8","#s-9"],
-            truth: ["#t-0","#t-1","#t-2","#t-3","#t-4","#t-5","#t-6","#t-7","#t-8","#t-9"],
-            value: ["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"]
+            equality: _.shuffle(["#e-0","#e-1","#e-2","#e-3","#e-4","#e-5","#e-6","#e-7","#e-8","#e-9"]),
+            freedom: _.shuffle(["#f-0","#f-1","#f-2","#f-3","#f-4","#f-5","#f-6","#f-7","#f-8","#f-9"]),
+            hope: _.shuffle(["#h-0","#h-1","#h-2","#h-3","#h-4","#h-5","#h-6","#h-7","#h-8","#h-9"]),
+            justice: _.shuffle(["#j-0","#j-1","#j-2","#j-3","#j-4","#j-5","#j-6","#j-7","#j-8","#j-9"]),
+            loyalty: _.shuffle(["#l-0","#l-1","#l-2","#l-3","#l-4","#l-5","#l-6","#l-7","#l-8","#l-9"]),
+            natural: _.shuffle(["#n-0","#n-1","#n-2","#n-3","#n-4","#n-5","#n-6","#n-7","#n-8","#n-9"]),
+            order: _.shuffle(["#o-0","#o-1","#o-2","#o-3","#o-4","#o-5","#o-6","#o-7","#o-8","#o-9"]),
+            security: _.shuffle(["#s-0","#s-1","#s-2","#s-3","#s-4","#s-5","#s-6","#s-7","#s-8","#s-9"]),
+            truth: _.shuffle(["#t-0","#t-1","#t-2","#t-3","#t-4","#t-5","#t-6","#t-7","#t-8","#t-9"]),
+            value: _.shuffle(["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"])
         },
         currentGhost,
         element,
@@ -123,6 +123,19 @@ $(function(){
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
         location = {x:path[0].x,y:path[0].y},
         placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone});
+
+        // Are arrays SHUFFLED? (using underscore)
+        console.log("shuffled theGhosts.equality: " + theGhosts.equality);
+        console.log("shuffled theGhosts.freedom: " + theGhosts.freedom);
+        console.log("shuffled theGhosts.hope: " + theGhosts.hope);
+        console.log("shuffled theGhosts.justice: " + theGhosts.justice);
+        console.log("shuffled theGhosts.loyalty: " + theGhosts.loyalty);
+        console.log("shuffled theGhosts.natural: " + theGhosts.natural);
+        console.log("shuffled theGhosts.order: " + theGhosts.order);
+        console.log("shuffled theGhosts.security: " + theGhosts.security);
+        console.log("shuffled theGhosts.truth: " + theGhosts.truth);
+        console.log("shuffled theGhosts.value: " + theGhosts.value);
+    
 
     // place REVOL words in a CIRCLE
     for(i = 0; i < amount; i++)
@@ -138,6 +151,7 @@ $(function(){
     TweenMax.set([spinMarker,".img", "#win-header h3"], {autoAlpha:0});
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
     //TweenMax.set(theTexts, {autoAlpha:0});
+
 
     startBtn.on("click", startRevolution);
 
@@ -179,7 +193,7 @@ $(function(){
             .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
         tl.addCallback(animateCentreTexts, "-=1.5");
 
-        console.log("ranGhost is " + ranGhost + " currentGhost is " + ghosts[ranGhost]);
+        console.log("ranGhost is " + ranGhost + " currentGhost is " + currentGhost);
 
         // ANIMATE & DELIVER TEXTS IN CENTRE - CENTRAL TEXTS DEFINING THE 'WIN' WORDS
         function animateCentreTexts () {
