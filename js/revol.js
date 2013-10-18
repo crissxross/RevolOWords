@@ -6,7 +6,6 @@ $(function(){
         ghostImages = $("#ghost-images"),
         winImages = $("#win-images"),
         winHeader = $("#win-header"),
-        // REVOLUTION TEXTS
         theTexts = {
         freedom: _.shuffle([
                     "Introducing the Freedom Rebate International Employment Program (FRIEP), a time tested employment strategy. The FRIEP indenture program is legal in most underdeveloped countries and our legal team keeps abreast of loopholes in the laws of other nations, where it has been erroneously suggested that we support slavery.",
@@ -124,7 +123,7 @@ $(function(){
         location = {x:path[0].x,y:path[0].y},
         placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone});
 
-        // Are arrays SHUFFLED? (using underscore)
+        // for TESTING ONLY - Are arrays SHUFFLED? (using underscore)
         console.log("shuffled theGhosts.equality: " + theGhosts.equality);
         console.log("shuffled theGhosts.freedom: " + theGhosts.freedom);
         console.log("shuffled theGhosts.hope: " + theGhosts.hope);
@@ -135,10 +134,17 @@ $(function(){
         console.log("shuffled theGhosts.security: " + theGhosts.security);
         console.log("shuffled theGhosts.truth: " + theGhosts.truth);
         console.log("shuffled theGhosts.value: " + theGhosts.value);
-        console.log("shuffled theTexts.equality: " + theTexts.equality[0]);
-        console.log("shuffled theTexts.freedom: " + theTexts.freedom[0]);
-        console.log("shuffled theTexts.truth: " + theTexts.truth[0]);
-        console.log("shuffled theTexts.security: " + theTexts.security[0]);
+
+        console.log("shuffled theTexts.equality: " + theTexts.equality[5]);
+        console.log("shuffled theTexts.freedom: " + theTexts.freedom[9]);
+        console.log("shuffled theTexts.hope: " + theTexts.hope[3]);
+        console.log("shuffled theTexts.justice: " + theTexts.justice[2]);
+        console.log("shuffled theTexts.loyalty: " + theTexts.loyalty[6]);
+        console.log("shuffled theTexts.natural: " + theTexts.natural[2]);
+        console.log("shuffled theTexts.order: " + theTexts.order[4]);
+        console.log("shuffled theTexts.security: " + theTexts.security[9]);
+        console.log("shuffled theTexts.truth: " + theTexts.truth[9]);
+        console.log("shuffled theTexts.value: " + theTexts.value[9]);
     
 
     // place REVOL words in a CIRCLE
@@ -154,7 +160,6 @@ $(function(){
     // Initial state of UI
     TweenMax.set([spinMarker,".img", "#win-header h3"], {autoAlpha:0});
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
-    //TweenMax.set(theTexts, {autoAlpha:0});
 
 
     startBtn.on("click", startRevolution);
@@ -162,25 +167,22 @@ $(function(){
     // REVOL ANIMATION
     function startRevolution(){
         var tl = new TimelineMax(),
-            // currentGhost,
-            ranGhost = Math.floor(Math.random()*10),
-            oldPic = null,
             ranSpin = Math.floor(Math.random()*10),
-            // select random text from theTexts selected array
-            ranWin = Math.floor(Math.random() * winWordsTotal),
             winWord = winWords[ranSpin],
-            winHead = winHeads[ranSpin],
-            ranText = Math.floor(Math.random() * theTexts[winWord].length);
+            winHead = winHeads[ranSpin];
 
-                    console.log("winWord is " + winWord + " and winHead is " + winHead);
-                    console.log("ranText # " + ranText + " & winWord array length is " + theTexts[winWord].length);
+            console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
 
         // set up
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
 
-        currentGhost = theGhosts[winWord][ranGhost];
+        // get the 'winning' category ghost image
+        currentGhost = theGhosts[winWord].pop();
+
+        console.log("currentGhost pic is " + currentGhost);
+
         //for TESTING ONLY:
         // currentGhost = theGhosts.natural[2];
         
@@ -189,15 +191,13 @@ $(function(){
         tl.to(elemContainer, 5, {rotation:spinPos[ranSpin], ease:Circ.easeOut})
             //show spinMarker
             .to(spinMarker, 2, {autoAlpha:1}, "-=2")
-            //show pic
+            //show image
             .to(currentGhost, 2, {autoAlpha:0.15})
-//            .to([theTexts, winHead], 1, {autoAlpha:1})
             .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
             .to(elemContainer, 0.75, {autoAlpha:0}, "-=1")
             .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
         tl.addCallback(animateCentreTexts, "-=1.5");
 
-        console.log("ranGhost is " + ranGhost + " currentGhost is " + currentGhost);
 
         // ANIMATE & DELIVER TEXTS IN CENTRE - CENTRAL TEXTS DEFINING THE 'WIN' WORDS
         function animateCentreTexts () {
@@ -256,7 +256,8 @@ $(function(){
                 }
             }
 
-                deliverText(theTexts[winWord][ranText], 350);
+                deliverText(theTexts[winWord].pop(), 350);
+
                 //for TESTING ONLY:
                 // deliverText(theTexts.freedom[4], 350);
 
