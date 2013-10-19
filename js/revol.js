@@ -117,6 +117,7 @@ $(function(){
             value: _.shuffle(["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"])
         },
         currentGhost,
+        message = $("#message"),
         element,
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
@@ -163,6 +164,7 @@ $(function(){
     // Initial state of UI
     TweenMax.set([spinMarker,".img", "#win-header h3"], {autoAlpha:0});
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
+    TweenMax.set(message, {autoAlpha:0});
 
 
     startBtn.on("click", startRevolution);
@@ -295,7 +297,9 @@ $(function(){
     }
 
     function showMessage(){
-        console.log("Nothing left in that one so showMessage and reset!");
+        // console.log("Nothing left in that one so showMessage and reset!");
+        TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true});
+        // TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true, onComplete:reset});
     }
 
 });
