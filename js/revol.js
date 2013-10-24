@@ -151,7 +151,11 @@ $(function(){
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
         location = {x:path[0].x,y:path[0].y},
-        placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone});
+        placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone}),
+        muzak = new buzz.sound( "/sounds/muzak.mp3", {
+            preload: true,
+            loop: true
+        });
 
         // for TESTING ONLY - Are arrays SHUFFLED? (using underscore)
         console.log("shuffled theGhosts.equality: " + theGhosts.equality);
@@ -195,6 +199,8 @@ $(function(){
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
     TweenMax.set(message, {autoAlpha:0});
 
+    muzak.play();
+
 
     startBtn.on("click", startRevolution);
 
@@ -236,7 +242,8 @@ $(function(){
                 .to(elemContainer, 0.75, {autoAlpha:0}, "-=1")
                 .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
             tl.addCallback(animateCentreTexts, "-=1.5");
-
+            //play muzak sound loop
+            // tl.addCallback(playMuzak);
         }   
 
 
@@ -302,6 +309,10 @@ $(function(){
                 //for TESTING ONLY:
                 // deliverText(theTexts.freedom[4], 350);
 
+        }
+
+        function playMuzak(){
+            muzak.play();
         }
 
         console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
