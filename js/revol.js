@@ -199,7 +199,7 @@ $(function(){
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
     TweenMax.set(message, {autoAlpha:0});
 
-    muzak.play();
+    //muzak.play();
 
 
     startBtn.on("click", startRevolution);
@@ -236,6 +236,8 @@ $(function(){
             tl.to(elemContainer, 5, {rotation:spinPos[ranSpin], ease:Circ.easeOut})
                 //show spinMarker
                 .to(spinMarker, 2, {autoAlpha:1}, "-=2")
+                //play muzak sound loop
+                .addCallback(playMuzak)
                 //show image
                 .to(currentGhost, 2, {autoAlpha:0.15})
                 .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
@@ -243,7 +245,7 @@ $(function(){
                 .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
             tl.addCallback(animateCentreTexts, "-=1.5");
             //play muzak sound loop
-            // tl.addCallback(playMuzak);
+            //tl.addCallback(playMuzak, "-=1.5");
         }   
 
 
@@ -313,6 +315,7 @@ $(function(){
 
         function playMuzak(){
             muzak.play();
+            muzak.fadeIn(2000);
         }
 
         console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
@@ -334,6 +337,10 @@ $(function(){
         TweenMax.staggerTo([elemContainer, startBtn], 1, {autoAlpha:1, delay:0.5}, 0.5);
          //fade out any pic that is in the centre
         TweenMax.to(currentGhost, 1, {autoAlpha:0, delay:0.75});
+
+        muzak.fadeOut(2000, function() {
+            muzak.stop();
+        });
     }
 
     function showMessage(){
