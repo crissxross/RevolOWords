@@ -155,6 +155,10 @@ $(function(){
         muzak = new buzz.sound( "sounds/muzak.mp3", {
             preload: true,
             loop: true
+        }),
+        whizzspin = new buzz.sound( "sounds/hitSpin-1.mp3", {
+            preload: true,
+            loop: false
         });
 
         // for TESTING ONLY - Are arrays SHUFFLED? (using underscore)
@@ -215,6 +219,8 @@ $(function(){
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
+
+        whizzspin.play();
 
         // get the 'winning' category ghost image
         currentGhost = theGhosts[winWord].pop();
