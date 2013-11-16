@@ -55,7 +55,6 @@ $(function(){
                     "All workers strive for promotion. Attend our cost effective seminars and learn how to develop a hierarchy of managerial positions where workers feel promoted but receive little remuneration and can affect nothing. Use our time-tested methods to ensure that your workers are happy, productive and loyal."
                 ]),
         justice: _.shuffle([
-                    "A rich man in Thailand harbored his murderous son in a garden of peacocks and palms.",
                     "A system of justice can execute an innocent person. This makes of Justice a lottery system, not a system of justice.",
                     "Be honest: would you prefer justice or wealth? Would immense wealth be balm to sooth all memory of pain or anger?",
                     "Purchase some Justice now. Justice does not come cheap, but our program can help you attain what you so justly deserve. Act now; don't wait until the long arm has reached your door. Be prepared by allowing us to submit to Justice's special prepaid plan.",

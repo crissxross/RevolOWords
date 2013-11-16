@@ -117,11 +117,10 @@ header {
 
 #the-texts{
     position:absolute;
-    width:460px;
+    width:520px;
     height:460px;
     top:50px;
 /*    top:30px;*/
-    left:30px;
     z-index:1;
 /*    overflow:hidden;*/
 }
