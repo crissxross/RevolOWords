@@ -202,7 +202,7 @@ $(function(){
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
     TweenMax.set(message, {autoAlpha:0});
 
-    //muzak.play();
+    muzak.play();
 
 
     startBtn.on("click", startRevolution);
@@ -242,15 +242,13 @@ $(function(){
                 //show spinMarker
                 .to(spinMarker, 2, {autoAlpha:1}, "-=2")
                 //play muzak sound loop
-                .addCallback(playMuzak)
+                //.addCallback(playMuzak)
                 //show image
                 .to(currentGhost, 2, {autoAlpha:0.15})
                 .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
                 .to(elemContainer, 0.75, {autoAlpha:0}, "-=1")
                 .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
             tl.addCallback(animateCentreTexts, "-=1.5");
-            //play muzak sound loop
-            //tl.addCallback(playMuzak, "-=1.5");
         }   
 
 
@@ -344,9 +342,9 @@ $(function(){
          //fade out any pic that is in the centre
         TweenMax.to(currentGhost, 1, {autoAlpha:0, delay:0.75});
 
-        muzak.fadeOut(2000, function() {
-            muzak.stop();
-        });
+        // muzak.fadeOut(2000, function() {
+        //     muzak.stop();
+        // });
     }
 
     function showMessage(){
