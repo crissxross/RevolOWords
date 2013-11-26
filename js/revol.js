@@ -8,7 +8,7 @@ $(function(){
         winHeader = $("#win-header"),
         theTexts = {
         freedom: _.shuffle([
-                    "Introducing the Freedom Rebate International Employment Program (FRIEP), a time tested employment strategy. The FRIEP indenture program is legal in most underdeveloped countries and our legal team keeps abreast of loopholes in the laws of other nations, where it has been erroneously suggested that we support slavery.",
+                    "Introducing the Freedom Rebate International Employment Program (FRIEP), a time tested employment strategy. The FRIEP indenture program is legal in most underdeveloped countries. Our legal team keeps abreast of loopholes in the laws of nations, where it has been erroneously suggested that we support slavery.",
                     "We will fight to protect your freedom. You will die for causes we decide for you. You will fight and die for the right reason. We will train your children to fight the good war. Freedom and glory await.",
                     "We will promote your freedom to consume. Have no fear. We will bathe you in an endless stream of messages that speak to your subconscious, freeing your desire to consume more.",
                     "Your liberties have been taken away from you in the name of Freedom. Enjoy the irony - be distracted from revolution by propaganda disguised as entertainment. Are you waiting for the next instalment of your favourite series? Do you feel entertained?",
@@ -38,7 +38,7 @@ $(function(){
                     "It is only natural to feed living things to living things in order for certain things to stay alive. Join our Natural Balance Network to ensure that only the most important things stay alive - namely our pets and us. Trust the NBN to work for you.",
                     "All of our products have Natural written clearly on the labels. The word natural means something to us and we want it to mean the same thing to you.",
                     "We are naturally good. Check us out today. Yes, most of our products are made or caused by humankind, but we can be trusted to use only ingredients that are cleared as being natural by government agencies that hold your health as the primary concern. If you can't trust them, whom can you trust?",
-                    "Be natural. Use our products to ensure that only natural ingredients pass through your lips or reside on your skin. If you are uncertain, please read our new and improved definition of natural. Take our online survey to ensure that the definitions are generated to suit your modern lifestyle.",
+                    "Be natural. Use our products to ensure that only natural ingredients pass your lips or reside on your skin. If you are uncertain, please read our new and improved definition of natural. Take our online survey to guarantee that the definitions are generated to suit your modern lifestyle.",
                     "At Natural Labels INC, we develop labels for your products. Our labels are certified and patented. By using one of our labels on your product, you are guaranteed to attract customers who want only natural goods. Our labels are recognized in all Western countries and come in all major languages. Get natural.",
                     "The Natural Defence Council can help you. We offer policing services to elite customers who need to defend themselves against protest and slander. We specialize in defending companies that develop and deliver atomic energy. Our slogan - Atoms Are Natural - is internationally recognized. Act now and receive a rebate on electric fences."
                 ]),
@@ -52,16 +52,15 @@ $(function(){
                     "Revolutionaries and Fascists share a need for lackeys. Behind the zealots are lackeys who perform deeds to sustain the ideologies. If you are uncertain, use our nifty secure online scripts to choose your ideology. We have a secure sign-up program so you can begin action today. Lackeys are the future.",
                     "Purchase the Loyalty Now Device. Stay loyal to the people and values you love. This device will alert you when you stray. Painless and tasteless. Fill out the questionnaire and then leave the rest to us. Act now to ensure your loyalty.",
                     "Enjoy our packaging and conventions at Loyalty INC. Your loyalty is important to us. Yes, we want your money but we want you to love us too. We are not culture politics masquerading as technology. We are as important as religion.",
-                    "All workers strive for promotion. Attend our cost effective seminars and learn how to develop a hierarchy of managerial positions where workers can feel that they have been promoted but actually receive very little remuneration and can affect nothing. Use our time-tested methods to ensure that your workers are happy and productive and, especially, loyal."
+                    "All workers strive for promotion. Attend our cost effective seminars and learn how to develop a hierarchy of managerial positions where workers feel promoted but receive little remuneration and can affect nothing. Use our time-tested methods to ensure that your workers are happy, productive and loyal."
                 ]),
         justice: _.shuffle([
-                    "A rich man in Thailand harbored his murderous son in a garden of peacocks and palms.",
                     "A system of justice can execute an innocent person. This makes of Justice a lottery system, not a system of justice.",
                     "Be honest: would you prefer justice or wealth? Would immense wealth be balm to sooth all memory of pain or anger?",
                     "Purchase some Justice now. Justice does not come cheap, but our program can help you attain what you so justly deserve. Act now; don't wait until the long arm has reached your door. Be prepared by allowing us to submit to Justice's special prepaid plan.",
                     "At Justice INC International we understand that Justice is an evolving concept. What was just in ancient Rome is no longer just in the modern world. Help us to ensure that justice reigns across all cultures and religions. Upload our Justice software to stay abreast of issues. Our software will automatically fill out petitions and surveys for you.",
                     "Were you born wounded? Do you understand the relationship between blood and obedience? Fear not. Our programs are designed to ensure that justice has no due date. We supply weapons and instructions on how to obtain justice for you and your family. Special deals arranged for people presently in Diasporas.",
-                    "Enjoy our free personal web server that implements a distributed social networking service for people in Diasporas. Our worldwide mobile network of servers allows you to be whoever you want to be. Unlike some networks, you don't have to use your real identity. Our special FATE system will explain everything to set your mind at ease.",
+                    "Enjoy our free personal web server that implements a distributed social networking service for people in Diasporas. Our worldwide mobile servers allow you to be whoever you want to be. No requirement to use your real identity. Our special FATE system will explain everything to set your mind at ease.",
                     "Shop Justice today. Our concept of one-size fits all ensures moral rightness based on ethics, rationality, law, natural law, religion, equity and fairness. We are the perfect fit for you. All of our clothing is labelled and colour coordinated so that people around you understand that you are deserving of justice.",
                     "Justice is touring the world. We are following the Injustice tour by days. Justice tour merchandise will bring you closer to resolving all issues related to Injustice. Purchase merchandise online prior to a tour location nearest you and win a seat on the floor of Justice.",
                     "We are a human rights organization that secures justice for victims of slavery and sexual exploitation. Get together with family, friends and other victims, pool your resources and submit a claim. The highest bids ensure that your persecutors will be the slaves of tomorrow."
@@ -80,14 +79,14 @@ $(function(){
                 ]),
         equality: _.shuffle([
                     "What did you expect? Equality? Nothing equals nothing else. There is never enough time to balance the odds. Mortality draws the line. We carry our differences to the grave.",
-                    "The Garbage Equality International mandate reads: We guarantee that all nations will share equally in garbage disposal - based on population. A recent report states that over-populated areas should learn to use garbage as fuel and building material. GEI social programs include training sessions. Critics believe the sessions are redundant.",
+                    "The Garbage Equality International mandate guarantees that all nations share equally in garbage disposal, based on population. A recent report states that over-populated areas should learn to use garbage as fuel and building material. GEI social programs include training sessions. Critics believe the sessions are redundant.",
                     "The Revolution of the Word is a worldwide organization. We are running a contest, open to all nationalities. Send us any word that you would like to revolutionize, such as Equality. We will give it a revolting meaning.",
                     "Equality is a new breakfast cereal enjoyed by young and old alike. Pour a bowl of Equality every morning for a balanced diet of facts and lies. Equality is guaranteed to stick to your convictions.",
                     "Join the Equality Network, where equal rights are negotiable. Shuck your chains. Stay on top of daily events that affect your rights. Learn to spread equality through our worldwide network of Slave Technologists.",
                     "Play Equality, a new international role-playing game. This time-line based game lets you develop characters including slave-traders, stockbrokers, revolutionaries, or activists. The Level Playing Field function is still under development.",
                     "Purchase some Equality today. Do not hesitate. It is the only way to ensure that your community measures up. Our program of Equal For All levels the playing field. Subscribe to Mercenary Weekly and learn how to order a team of specialists to equalize your neighbourhood.",
-                    "We are an organization advocating equality for all religions. Our mandate is to elevate all monotheistic gods to the same plane. Our unique and patented software will hack all religious-based websites that promote monotheism and rename the god based on algorithms that remain a mystery, even to us. Donate today to elevate your god.",
-                    "Do you feel unequal and downtrodden? Are concerned about racial equality and feminist programs that affect you and your children? Do you feel whipped by the backlash? Join our organization, The Backlash Defence Society, and receive our newsletter that outlines how you can protect yourself. Join soon and receive free bumper stickers for your vehicle."
+                    "Our organization advocates equality for all religions, elevating all monotheistic gods to the same plane. Our unique and patented software will hack all monotheistic websites and rename the god based on algorithms that remain a mystery, even to us. Donate today to elevate your god.",
+                    "Do you feel unequal and downtrodden? Are concerned about racial equality and feminist programs affecting you and your children? Do you feel whipped by the backlash? Join The Backlash Defence Society and receive our newsletter outlining how to protect yourself. Join soon and get free bumper stickers."
                 ]),
         hope: _.shuffle([
                     "Hope Springs INC: for all your suspension needs. Suspend grief, suspend worry, suspend anger, suspend lies. Every tune-up includes a minimum 150 Hope Points. Bonus points if you upgrade to the Eternal Club: suspend yourself in hope.",
@@ -312,10 +311,11 @@ $(function(){
                 }
             }
 
-                deliverText(theTexts[winWord].pop(), 350);
+                deliverText(theTexts[winWord].pop(), 360);
+                // deliverText(theTexts[winWord].pop(), 350);
 
                 //for TESTING ONLY:
-                // deliverText(theTexts.freedom[4], 350);
+                //deliverText(theTexts.equality[7], 350);
 
         }
 
