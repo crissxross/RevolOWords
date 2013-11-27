@@ -97,7 +97,7 @@ $(function(){
                     "Purchase some Hope Points today. Guaranteed to last a lifetime. Transferable after death to ensure that your children are enrolled in the Hope Program and can continue to hope for a better world.",
                     "We provide Nano Hope Inserts for people in under-developed nations. The inserts broadcast inspirational quotations 24/7 directly into their brains. The quotations are in all languages and religions. Act now and receive our advanced NHI broadcast software that allows you to chose the quotations.",
                     "We are presently accepting applications for a new Hope Administrator to oversee overseas operations. You will administer a vanguard of Hope Ministers. Your job will be maintaining certain levels of hope in certain countries that have little or no hope. You should be photogenic with no visible defects.",
-                    "Do you have little hope for the future? Join our growing online organization, Hope For the Future, and bank hope for those days when you feel no hope. Our unique Hope Rewards program will tabulate and disseminate hope on the basis of need. Our inspirational, catchy and creative slogans will prop you up. Share them on your favourite social network and spread the word."
+                    "Do you have little hope for the future? Join our growing online organization, Hope For the Future, and bank hope for those days when you feel no hope. Our unique Hope Rewards program will tabulate and disseminate hope on the basis of need. Our inspirational slogans will prop you up. Share them on your social networks and spread the word."
                 ]),
         security: _.shuffle([
                     "The drone pilot shifted in his seat. There was a flash on the screen: the explosion. Parts of the building collapsed. The child disappeared. One less terrorist in the making.",
@@ -202,8 +202,6 @@ $(function(){
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
     TweenMax.set(message, {autoAlpha:0});
 
-    //muzak.play();
-
 
     startBtn.on("click", startRevolution);
 
@@ -242,7 +240,7 @@ $(function(){
                 //show spinMarker
                 .to(spinMarker, 2, {autoAlpha:1}, "-=2")
                 //play muzak sound loop
-                .addCallback(playMuzak)
+                // .addCallback(playMuzak)
                 //show image
                 .to(currentGhost, 2, {autoAlpha:0.15})
                 .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
@@ -250,8 +248,11 @@ $(function(){
                 .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
             tl.addCallback(animateCentreTexts, "-=1.5");
             //play muzak sound loop
-            //tl.addCallback(playMuzak, "-=1.5");
-        }   
+            if ( muzak.isPaused() ) {
+                console.log("sound was paused");
+                tl.addCallback(playMuzak, 5);
+            }
+        }
 
 
         // ANIMATE & DELIVER TEXTS IN CENTRE - CENTRAL TEXTS DEFINING THE 'WIN' WORDS
@@ -321,7 +322,8 @@ $(function(){
 
         function playMuzak(){
             muzak.play();
-            muzak.fadeIn(2000);
+            //muzak.fadeIn(2000);
+            muzak.setVolume(0).fadeTo(10, 2000);
         }
 
         console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
@@ -344,9 +346,9 @@ $(function(){
          //fade out any pic that is in the centre
         TweenMax.to(currentGhost, 1, {autoAlpha:0, delay:0.75});
 
-        muzak.fadeOut(2000, function() {
-            muzak.stop();
-        });
+        // muzak.fadeOut(2000, function() {
+        //     muzak.stop();
+        // });
     }
 
     function showMessage(){
