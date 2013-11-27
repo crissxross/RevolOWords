@@ -239,8 +239,6 @@ $(function(){
             tl.to(elemContainer, 5, {rotation:spinPos[ranSpin], ease:Circ.easeOut})
                 //show spinMarker
                 .to(spinMarker, 2, {autoAlpha:1}, "-=2")
-                //play muzak sound loop
-                // .addCallback(playMuzak)
                 //show image
                 .to(currentGhost, 2, {autoAlpha:0.15})
                 .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
@@ -322,7 +320,6 @@ $(function(){
 
         function playMuzak(){
             muzak.play();
-            //muzak.fadeIn(2000);
             muzak.setVolume(0).fadeTo(10, 2000);
         }
 
