@@ -172,20 +172,6 @@ $(function(){
         console.log("shuffled theGhosts.security: " + theGhosts.security);
         console.log("shuffled theGhosts.truth: " + theGhosts.truth);
         console.log("shuffled theGhosts.value: " + theGhosts.value);
-
-        // console.log("shuffled theTexts.equality: " + theTexts.equality[5]);
-        // console.log("shuffled theTexts.freedom: " + theTexts.freedom[9]);
-        // console.log("shuffled theTexts.hope: " + theTexts.hope[3]);
-        // console.log("shuffled theTexts.justice: " + theTexts.justice[2]);
-        // console.log("shuffled theTexts.loyalty: " + theTexts.loyalty[6]);
-        // console.log("shuffled theTexts.natural: " + theTexts.natural[2]);
-        // console.log("shuffled theTexts.order: " + theTexts.order[4]);
-        // console.log("shuffled theTexts.security: " + theTexts.security[9]);
-        // console.log("shuffled theTexts.truth: " + theTexts.truth[9]);
-        // console.log("shuffled theTexts.value: " + theTexts.value[9]);
-
-        // console.log("Starting length of winWords: " + winWords.length);
-        // console.log("Original array of winWords: " + winWords);
     
 
     // place REVOL words in a CIRCLE
@@ -214,6 +200,8 @@ $(function(){
             winHead = winHeads[ranSpin],
             winPos = spinPos[ranSpin];
 
+            console.log("SPIN CLICKED - winWord is " + winWord + " + winHead is " + winHead + " + winPos is " + winPos);
+
         // set up
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
@@ -221,21 +209,13 @@ $(function(){
 
         whizzspin.play();
 
-        // get the 'winning' category ghost image - BUT ERROR if undefined
-        // currentGhost = theGhosts[winWord].pop();
-         //for TESTING ONLY:
-        // currentGhost = theGhosts.natural[2];
-
-            // console.log("currentGhost pic is " + currentGhost);
-
-            // console.log("The winWords length: " + winWords.length);
-            // console.log("The winWords: " + winWords);
-
         if (theTexts[winWord].length === 0) {
 
+            console.log("theTexts["+ winWord + "] array length is " + theTexts[winWord].length);
             showMessage();
             reset();
         } else {
+
             currentGhost = theGhosts[winWord].pop();
             console.log("currentGhost pic is " + currentGhost);
 
@@ -254,7 +234,6 @@ $(function(){
                 console.log("sound was paused");
                 tl.addCallback(playMuzak, 5);
             }
-            console.log("winPos random win position is " + winPos);
         }
 
 
@@ -359,8 +338,8 @@ $(function(){
         
 
         console.log("REMOVE --- " + winWord + " --- because this is the last text in its array. Also remove winPos: " + winPos);
-        console.log("The winWords length: " + winWords.length + " | spinPos length: " +spinPos.length + " | winHeads length: " + winHeads.length);
-        console.log("The winWords: " + winWords);
+        console.log("The winWords array length: " + winWords.length + " | spinPos length: " +spinPos.length + " | winHeads length: " + winHeads.length);
+        console.log("The winWords are now: " + winWords);
     }
 
     function showMessage(){
