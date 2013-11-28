@@ -209,9 +209,9 @@ $(function(){
 
         whizzspin.play();
 
-        if (theTexts[winWord].length === 0) {
+        if (theTexts[winWord] === undefined) {
 
-            console.log("theTexts["+ winWord + "] array length is " + theTexts[winWord].length);
+            // console.log("theTexts["+ winWord + "] array length is " + theTexts[winWord].length);
             showMessage();
             reset();
         } else {
@@ -307,10 +307,13 @@ $(function(){
             muzak.setVolume(0).fadeTo(10, 2000);
         }
 
-        console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
+        // console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
 
         // Remove the winWord & corresponding winPos & winHead if there are no texts left to display in that category
-        if (theTexts[winWord].length === 1) {
+        if (theTexts[winWord] === undefined){
+            showMessage();
+        }
+        else if (theTexts[winWord].length === 1) {
 
             expireWord(winWord, winHead, winPos);
 
@@ -338,7 +341,7 @@ $(function(){
         
 
         console.log("REMOVE --- " + winWord + " --- because this is the last text in its array. Also remove winPos: " + winPos);
-        console.log("The winWords array length: " + winWords.length + " | spinPos length: " +spinPos.length + " | winHeads length: " + winHeads.length);
+        // console.log("The winWords array length: " + winWords.length + " | spinPos length: " +spinPos.length + " | winHeads length: " + winHeads.length);
         console.log("The winWords are now: " + winWords);
     }
 
