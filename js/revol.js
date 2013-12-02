@@ -6,6 +6,9 @@ $(function(){
         ghostImages = $("#ghost-images"),
         winImages = $("#win-images"),
         winHeader = $("#win-header"),
+        wheelWords = $("#elemContainer"),
+        title = $("#title"),
+        message = $("#message"),
         theTexts = {
         freedom: _.shuffle([
                     // "Introducing the Freedom Rebate International Employment Program (FRIEP), a time tested employment strategy. The FRIEP indenture program is legal in most underdeveloped countries. Our legal team keeps abreast of loopholes in the laws of nations, where it has been erroneously suggested that we support slavery.",
@@ -145,7 +148,6 @@ $(function(){
             value: _.shuffle(["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"])
         },
         currentGhost,
-        message = $("#message"),
         element,
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
@@ -159,6 +161,7 @@ $(function(){
             preload: true,
             loop: false
         }),
+        firstSpin = true,
         expiryDue = false;
 
         // for TESTING ONLY - Are arrays SHUFFLED? (using underscore)
@@ -187,6 +190,8 @@ $(function(){
     // Initial state of UI
     TweenMax.set([spinMarker,".img", "#win-header h3"], {autoAlpha:0});
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
+    TweenMax.set(wheelWords, {alpha:0.2});
+    TweenMax.set(title, {autoAlpha:1});
     TweenMax.set(message, {autoAlpha:0});
 
 
@@ -207,7 +212,12 @@ $(function(){
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
         TweenMax.set(message, {autoAlpha:0});
+        TweenMax.set(wheelWords, {alpha:1});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
+        if (firstSpin === true) {
+            TweenMax.to(title, 2, {autoAlpha:0});
+        }
+        firstSpin = false;
 
 
         if (theTexts[winWord] === undefined) {
