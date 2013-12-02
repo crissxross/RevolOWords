@@ -6,6 +6,9 @@ $(function(){
         ghostImages = $("#ghost-images"),
         winImages = $("#win-images"),
         winHeader = $("#win-header"),
+        wheelWords = $("#elemContainer"),
+        title = $("#title"),
+        message = $("#message"),
         theTexts = {
         freedom: _.shuffle([
                     // "Introducing the Freedom Rebate International Employment Program (FRIEP), a time tested employment strategy. The FRIEP indenture program is legal in most underdeveloped countries. Our legal team keeps abreast of loopholes in the laws of nations, where it has been erroneously suggested that we support slavery.",
@@ -145,20 +148,22 @@ $(function(){
             value: _.shuffle(["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"])
         },
         currentGhost,
-        message = $("#message"),
         element,
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
         location = {x:path[0].x,y:path[0].y},
         placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone}),
-        muzak = new buzz.sound( "sounds/muzak.mp3", {
+        muzak = new buzz.sound( "sounds/muzak", {
+            formats: [ "ogg", "mp3"],
             preload: true,
             loop: true
         }),
-        whizzspin = new buzz.sound( "sounds/hitSpin-1.mp3", {
+        whizzspin = new buzz.sound( "sounds/hitSpin-1", {
+            formats: [ "ogg", "mp3"],
             preload: true,
             loop: false
         }),
+        firstSpin = true,
         expiryDue = false;
 
         // for TESTING ONLY - Are arrays SHUFFLED? (using underscore)
@@ -187,6 +192,8 @@ $(function(){
     // Initial state of UI
     TweenMax.set([spinMarker,".img", "#win-header h3"], {autoAlpha:0});
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
+    TweenMax.set(wheelWords, {alpha:0.2});
+    TweenMax.set(title, {autoAlpha:1});
     TweenMax.set(message, {autoAlpha:0});
 
 
@@ -207,12 +214,16 @@ $(function(){
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
         TweenMax.set(message, {autoAlpha:0});
+        TweenMax.set(wheelWords, {alpha:1});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
+        if (firstSpin === true) {
+            TweenMax.to(title, 2, {autoAlpha:0});
+        }
+        firstSpin = false;
 
 
         if (theTexts[winWord] === undefined) {
 
-            // console.log("theTexts["+ winWord + "] array length is " + theTexts[winWord].length);
             showMessage();
             reset();
         } else {
@@ -303,10 +314,6 @@ $(function(){
             }
 
                 deliverText(theTexts[winWord].pop(), 360);
-                // deliverText(theTexts[winWord].pop(), 350);
-
-                //for TESTING ONLY:
-                //deliverText(theTexts.equality[7], 350);
 
         }
 
@@ -314,8 +321,6 @@ $(function(){
             muzak.play();
             muzak.setVolume(0).fadeTo(10, 2000);
         }
-
-        // console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
 
         // Remove the winWord & corresponding winPos & winHead if there are no texts left to display in that category
         if (theTexts[winWord] === undefined){
@@ -340,9 +345,6 @@ $(function(){
 
     function expireWord(winWord, winHead, winPos){
 
-        //need to make winHead disappear for future spins
-        //TweenMax.to(winHeads, 1, {autoAlpha:0});
-
         winWords = _.without(winWords, winWord);
         winHeads = _.without(winHeads, winHead);
         spinPos = _.without(spinPos, winPos);
@@ -356,8 +358,6 @@ $(function(){
     function showMessage(){
         // console.log("Nothing left in that one so showMessage!");
         TweenMax.to(message, 0.5, {autoAlpha:1});
-        // TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true});
-        // TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true, onComplete:reset});
     }
 
 });
