@@ -224,7 +224,6 @@ $(function(){
 
         if (theTexts[winWord] === undefined) {
 
-            // console.log("theTexts["+ winWord + "] array length is " + theTexts[winWord].length);
             showMessage();
             reset();
         } else {
@@ -315,10 +314,6 @@ $(function(){
             }
 
                 deliverText(theTexts[winWord].pop(), 360);
-                // deliverText(theTexts[winWord].pop(), 350);
-
-                //for TESTING ONLY:
-                //deliverText(theTexts.equality[7], 350);
 
         }
 
@@ -326,8 +321,6 @@ $(function(){
             muzak.play();
             muzak.setVolume(0).fadeTo(10, 2000);
         }
-
-        // console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
 
         // Remove the winWord & corresponding winPos & winHead if there are no texts left to display in that category
         if (theTexts[winWord] === undefined){
@@ -352,9 +345,6 @@ $(function(){
 
     function expireWord(winWord, winHead, winPos){
 
-        //need to make winHead disappear for future spins
-        //TweenMax.to(winHeads, 1, {autoAlpha:0});
-
         winWords = _.without(winWords, winWord);
         winHeads = _.without(winHeads, winHead);
         spinPos = _.without(spinPos, winPos);
@@ -368,8 +358,6 @@ $(function(){
     function showMessage(){
         // console.log("Nothing left in that one so showMessage!");
         TweenMax.to(message, 0.5, {autoAlpha:1});
-        // TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true});
-        // TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true, onComplete:reset});
     }
 
 });
