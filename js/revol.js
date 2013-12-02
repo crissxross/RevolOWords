@@ -153,11 +153,13 @@ $(function(){
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
         location = {x:path[0].x,y:path[0].y},
         placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone}),
-        muzak = new buzz.sound( "sounds/muzak.mp3", {
+        muzak = new buzz.sound( "sounds/muzak", {
+            formats: [ "ogg", "mp3"],
             preload: true,
             loop: true
         }),
-        whizzspin = new buzz.sound( "sounds/hitSpin-1.mp3", {
+        whizzspin = new buzz.sound( "sounds/hitSpin-1", {
+            formats: [ "ogg", "mp3"],
             preload: true,
             loop: false
         }),
