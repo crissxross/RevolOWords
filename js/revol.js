@@ -14,7 +14,7 @@ $(function(){
                     // "Your liberties have been taken away from you in the name of Freedom. Enjoy the irony - be distracted from revolution by propaganda disguised as entertainment. Are you waiting for the next instalment of your favourite series? Do you feel entertained?",
                     // "Take two Freedom-inducing tablets every evening before bed. Enjoy the drowsy effect. Wallow in the dream-free dullness. At the start of your workday, take the Freedom-plus tablet, be productive. When the day overwhelms, take your evening pill. Freedom through medication.",
                     "Our Freedom to Choose program will free you from the drudgery of making choices. Leave the little things to us and focus on what really matters.",
-                    // "Feel free to opt out at anytime. Opt out of everything that annoys you. Our Special Filtration Application will free you from unnecessary thinking about what is free and what is not. Fear not. Be free.",
+                    "Feel free to opt out at anytime. Opt out of everything that annoys you. Our Special Filtration Application will free you from unnecessary thinking about what is free and what is not. Fear not. Be free.",
                     // "Win your Freedom today. Our special Freedom Games Network allows you to play various scenarios to gain your freedom. Join now and gain bonus weapons. Our virtual Freedom Points are tradable in real life. You can help others gain their Freedom.",
                     // "Be free of fear. Our fully tested and patented Fear Abatement Medication will free you of all worry. Take the medication as directed, sit back and enjoy the enclosed DVD. No tricks or gimmicks. Trust us to free you of all fears.",
                     // "Do you feel trapped in a mundane existence? Do you want to free yourself of feelings of inferiority? Our program includes our patented Expansion Lenses, legal weaponry and special medications. Be the first one on your street to be truly free."
@@ -26,7 +26,7 @@ $(function(){
                     // "Racism, xenophobia, and superiority syndromes are terrific tools to bring people on side. Corruption and violence will keep them on-message. Well-placed rumours will pay dividends. Buy into the program, or chose to live a drab life of desperation.",
                     // "Order is everything. Join the Order of Orders today. The OoO is a blanket organization that guarantees you a place in line for what you really deserve. Act now or lose your place in the queue.",
                     // "Subscribe to our program today. Learn how to apply our Word Revolution Software. Change conversational words and phrases like 'war' or 'ethnic cleansing' to 'moving borders', 'involvement', or 'intervention'. Propaganda is the future.",
-                    // "Your order is waiting. Delay no longer. This order has been placed for your benefit at no extra charge. Click the Order icon and accept delivery. This order will change your life.",
+                    "Your order is waiting. Delay no longer. This order has been placed for your benefit at no extra charge. Click the Order icon and accept delivery. This order will change your life.",
                     // "Arrange your life. Put everything in proper order. First things first. What are your desires? What is important to you? Answer the survey questions and then use our free Order First Program to get a handle on your life.",
                     // "Law and Order: do you miss them? Do you wonder how we got to this state? Do you understand that we got here on plastic wings manufactured at bargain prices? Would you like a plastic halo as well? Do you deserve it? Does it matter?",
                     // "Internal memo: Do not veer from the message! A vote for the Order Party is a vote for order. If elected we will bring order into the lives of the people. We believe that order will ensure a secure future for them and their children. Order. Order. Order. Easy to understand. That is our simple and entire election platform."
@@ -36,7 +36,7 @@ $(function(){
                     // "The pre-given world of natural things has lost its relevance in this modern age. Some critics say all things are natural, but this only applies if you are able to drop your morality and wait for the logical end of natural things. You won't have long to wait.",
                     // "Natural Whole Foods Group Bulletin: It's only natural to pay a premium for Whole Foods because NWFG has created a lifestyle brand that delivers on its promise. Our product will monitor you constantly to ensure you get the most benefit from the NWFG lifestyle.",
                     // "It is only natural to feed living things to living things in order for certain things to stay alive. Join our Natural Balance Network to ensure that only the most important things stay alive - namely our pets and us. Trust the NBN to work for you.",
-                    // "All of our products have Natural written clearly on the labels. The word natural means something to us and we want it to mean the same thing to you.",
+                    "All of our products have Natural written clearly on the labels. The word natural means something to us and we want it to mean the same thing to you.",
                     // "We are naturally good. Check us out today. Yes, most of our products are made or caused by humankind, but we can be trusted to use only ingredients that are cleared as being natural by government agencies that hold your health as the primary concern. If you can't trust them, whom can you trust?",
                     // "Be natural. Use our products to ensure that only natural ingredients pass your lips or reside on your skin. If you are uncertain, please read our new and improved definition of natural. Take our online survey to guarantee that the definitions are generated to suit your modern lifestyle.",
                     // "At Natural Labels INC, we develop labels for your products. Our labels are certified and patented. By using one of our labels on your product, you are guaranteed to attract customers who want only natural goods. Our labels are recognized in all Western countries and come in all major languages. Get natural.",
@@ -46,7 +46,7 @@ $(function(){
                     "He was loyal to the party and voted against his conscience, this was made possible by blind faith in the Leader.",
                     // "I have a loyalty that runs in my bloodstream, when I lock into someone or something, you can't get me away from it. I commit thoroughly. That's in policy, a deal, and a commitment. Loyalty, right or wrong.",
                     // "I'll take fifty percent efficiency to get one hundred percent loyalty. That's how you run a country.",
-                    // "What history are you loyal to? Would you swear by a history? Does it include bones? Are you loyal to certain bones?",
+                    "What history are you loyal to? Would you swear by a history? Does it include bones? Are you loyal to certain bones?",
                     // "Loyalty is an important technology. Our Loyalty program operators are ready to get you up and running with our innovative Smart Button. Loyalty is a click away.",
                     // "One session with Dr Justin Love, our Loyalty Sessionist, and you will be rid of any instances of disloyalty, faithlessness, falseness, falsity, inconstancy, infidelity, perfidiousness, perfidy, treachery, or unfaithfulness. Certification guaranteed.",
                     // "Revolutionaries and Fascists share a need for lackeys. Behind the zealots are lackeys who perform deeds to sustain the ideologies. If you are uncertain, use our nifty secure online scripts to choose your ideology. We have a secure sign-up program so you can begin action today. Lackeys are the future.",
@@ -56,7 +56,7 @@ $(function(){
                 ]),
         justice: _.shuffle([
                     "A system of justice can execute an innocent person. This makes of Justice a lottery system, not a system of justice.",
-                    // "Be honest: would you prefer justice or wealth? Would immense wealth be balm to sooth all memory of pain or anger?",
+                    "Be honest: would you prefer justice or wealth? Would immense wealth be balm to sooth all memory of pain or anger?",
                     // "Purchase some Justice now. Justice does not come cheap, but our program can help you attain what you so justly deserve. Act now; don't wait until the long arm has reached your door. Be prepared by allowing us to submit to Justice's special prepaid plan.",
                     // "At Justice INC International we understand that Justice is an evolving concept. What was just in ancient Rome is no longer just in the modern world. Help us to ensure that justice reigns across all cultures and religions. Upload our Justice software to stay abreast of issues. Our software will automatically fill out petitions and surveys for you.",
                     // "Were you born wounded? Do you understand the relationship between blood and obedience? Fear not. Our programs are designed to ensure that justice has no due date. We supply weapons and instructions on how to obtain justice for you and your family. Special deals arranged for people presently in Diasporas.",
@@ -66,7 +66,7 @@ $(function(){
                     // "We are a human rights organization that secures justice for victims of slavery and sexual exploitation. Get together with family, friends and other victims, pool your resources and submit a claim. The highest bids ensure that your persecutors will be the slaves of tomorrow."
                 ]),
         truth: _.shuffle([
-                    // "What is Truth if not put to the test? Truth does not come with a comfortable chair and a fire in the stove, snuggled up with a Good Book? That is comfort. Truth is in the fire.",
+                    "What is Truth if not put to the test? Truth does not come with a comfortable chair and a fire in the stove, snuggled up with a Good Book? That is comfort. Truth is in the fire.",
                     "It might be said that the meaning of one word is always another word. Apply this to Truth, or someone will do it for you.",
                     // "There is a hard kernel of Truth at the core, under our Plasticine lives. We can re-model as we wish, as we age, during trauma or glee - but the only way to reach the core is by stripping away the clay.",
                     // "The Competition Bureau prohibits making any deceptive representations for the purpose of promoting a product or a business interest. The provision does not apply if the advertised representation was a mistake. We all make mistakes.",
@@ -81,7 +81,7 @@ $(function(){
                     "What did you expect? Equality? Nothing equals nothing else. There is never enough time to balance the odds. Mortality draws the line. We carry our differences to the grave.",
                     // "The Garbage Equality International mandate guarantees that all nations share equally in garbage disposal, based on population. A recent report states that over-populated areas should learn to use garbage as fuel and building material. GEI social programs include training sessions. Critics believe the sessions are redundant.",
                     // "The Revolution of the Word is a worldwide organization. We are running a contest, open to all nationalities. Send us any word that you would like to revolutionize, such as Equality. We will give it a revolting meaning.",
-                    // "Equality is a new breakfast cereal enjoyed by young and old alike. Pour a bowl of Equality every morning for a balanced diet of facts and lies. Equality is guaranteed to stick to your convictions.",
+                    "Equality is a new breakfast cereal enjoyed by young and old alike. Pour a bowl of Equality every morning for a balanced diet of facts and lies. Equality is guaranteed to stick to your convictions.",
                     // "Join the Equality Network, where equal rights are negotiable. Shuck your chains. Stay on top of daily events that affect your rights. Learn to spread equality through our worldwide network of Slave Technologists.",
                     // "Play Equality, a new international role-playing game. This time-line based game lets you develop characters including slave-traders, stockbrokers, revolutionaries, or activists. The Level Playing Field function is still under development.",
                     // "Purchase some Equality today. Do not hesitate. It is the only way to ensure that your community measures up. Our program of Equal For All levels the playing field. Subscribe to Mercenary Weekly and learn how to order a team of specialists to equalize your neighbourhood.",
@@ -209,7 +209,6 @@ $(function(){
         TweenMax.set(message, {autoAlpha:0});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
 
-        whizzspin.play();
 
         if (theTexts[winWord] === undefined) {
 
@@ -217,6 +216,7 @@ $(function(){
             showMessage();
             reset();
         } else {
+            whizzspin.play();
 
             currentGhost = theGhosts[winWord].pop();
             console.log("currentGhost pic is " + currentGhost);
@@ -228,20 +228,13 @@ $(function(){
                 //show image
                 .to(currentGhost, 2, {autoAlpha:0.15})
                 .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
-                .to(elemContainer, 0.75, {autoAlpha:0}, "-=1")
-                .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
+                .to(elemContainer, 0.75, {autoAlpha:0}, "-=1");
+                // .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
 
-            // THESE DON'T WORK !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // if (theTexts[winWord] !== undefined) {
-            //     tl.to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, 7);
-            // }
-
-            // show winHead and also remove if showing for last time
-            // if (theTexts[winWord].length <= 1) {
-            //     tl.to(winHead, 0.75, {autoAlpha:0.5, scale:1.05, repeat:1, repeatDelay:1, yoyo:true}, 7.5);
-            // } else {
-            //     tl.to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, 7.5);
-            // }
+            // show the winHead if it's not the last time for that category
+            if (theTexts[winWord].length > 1) {
+                tl.to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, 7);
+            }
 
             tl.addCallback(animateCentreTexts, "-=1.5");
             //play muzak sound loop
