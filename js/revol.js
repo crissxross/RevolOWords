@@ -6,6 +6,9 @@ $(function(){
         ghostImages = $("#ghost-images"),
         winImages = $("#win-images"),
         winHeader = $("#win-header"),
+        wheelWords = $("#elemContainer"),
+        title = $("#title"),
+        message = $("#message"),
         theTexts = {
         freedom: _.shuffle([
                     "Introducing the Freedom Rebate International Employment Program (FRIEP), a time tested employment strategy. The FRIEP indenture program is legal in most underdeveloped countries. Our legal team keeps abreast of loopholes in the laws of nations, where it has been erroneously suggested that we support slavery.",
@@ -145,20 +148,23 @@ $(function(){
             value: _.shuffle(["#v-0","#v-1","#v-2","#v-3","#v-4","#v-5","#v-6","#v-7","#v-8","#v-9"])
         },
         currentGhost,
-        message = $("#message"),
         element,
         elemContainer = $("div#elemContainer"),
         path = [{x:0,y:0},{x:220,y:-220},{x:440,y:0},{x:220,y:220},{x:0,y:0}],
         location = {x:path[0].x,y:path[0].y},
         placeTwn = TweenMax.to(location, amount, {bezier:{curviness:1.5, values:path}, ease:Linear.easeNone}),
-        muzak = new buzz.sound( "sounds/muzak.mp3", {
+        muzak = new buzz.sound( "sounds/muzak", {
+            formats: [ "ogg", "mp3"],
             preload: true,
             loop: true
         }),
-        whizzspin = new buzz.sound( "sounds/hitSpin-1.mp3", {
+        whizzspin = new buzz.sound( "sounds/hitSpin-1", {
+            formats: [ "ogg", "mp3"],
             preload: true,
             loop: false
-        });
+        }),
+        firstSpin = true,
+        expiryDue = false;
 
         // for TESTING ONLY - Are arrays SHUFFLED? (using underscore)
         console.log("shuffled theGhosts.equality: " + theGhosts.equality);
@@ -171,20 +177,6 @@ $(function(){
         console.log("shuffled theGhosts.security: " + theGhosts.security);
         console.log("shuffled theGhosts.truth: " + theGhosts.truth);
         console.log("shuffled theGhosts.value: " + theGhosts.value);
-
-        // console.log("shuffled theTexts.equality: " + theTexts.equality[5]);
-        // console.log("shuffled theTexts.freedom: " + theTexts.freedom[9]);
-        // console.log("shuffled theTexts.hope: " + theTexts.hope[3]);
-        // console.log("shuffled theTexts.justice: " + theTexts.justice[2]);
-        // console.log("shuffled theTexts.loyalty: " + theTexts.loyalty[6]);
-        // console.log("shuffled theTexts.natural: " + theTexts.natural[2]);
-        // console.log("shuffled theTexts.order: " + theTexts.order[4]);
-        // console.log("shuffled theTexts.security: " + theTexts.security[9]);
-        // console.log("shuffled theTexts.truth: " + theTexts.truth[9]);
-        // console.log("shuffled theTexts.value: " + theTexts.value[9]);
-
-        // console.log("Starting length of winWords: " + winWords.length);
-        // console.log("Original array of winWords: " + winWords);
     
 
     // place REVOL words in a CIRCLE
@@ -200,6 +192,8 @@ $(function(){
     // Initial state of UI
     TweenMax.set([spinMarker,".img", "#win-header h3"], {autoAlpha:0});
     TweenMax.set(".pic", {borderRadius: "50%", autoAlpha:0});
+    TweenMax.set(wheelWords, {alpha:0.2});
+    TweenMax.set(title, {autoAlpha:1});
     TweenMax.set(message, {autoAlpha:0});
 
 
@@ -210,40 +204,49 @@ $(function(){
         var tl = new TimelineMax(),
             ranSpin = Math.floor(Math.random()*10),
             winWord = winWords[ranSpin],
-            winHead = winHeads[ranSpin];
+            winHead = winHeads[ranSpin],
+            winPos = spinPos[ranSpin];
+            // showHead = winHead;
+
+            console.log("SPIN CLICKED - winWord is " + winWord + " + winHead is " + winHead + " + winPos is " + winPos);
 
         // set up
         TweenLite.set(elemContainer, {rotation:0});
         TweenLite.set([startBtn, spinMarker], {autoAlpha:0});
+        TweenMax.set(message, {autoAlpha:0});
+        TweenMax.set(wheelWords, {alpha:1});
         TweenMax.to(theTexts, 0.5, {autoAlpha:0});
+        if (firstSpin === true) {
+            TweenMax.to(title, 2, {autoAlpha:0});
+        }
+        firstSpin = false;
 
-        whizzspin.play();
 
-        // get the 'winning' category ghost image
-        currentGhost = theGhosts[winWord].pop();
-         //for TESTING ONLY:
-        // currentGhost = theGhosts.natural[2];
-
-            console.log("currentGhost pic is " + currentGhost);
-
-            // console.log("The winWords length: " + winWords.length);
-            // console.log("The winWords: " + winWords);
-
-        if (theTexts[winWord].length === 0) {
+        if (theTexts[winWord] === undefined) {
 
             showMessage();
             reset();
         } else {
+            whizzspin.play();
+
+            currentGhost = theGhosts[winWord].pop();
+            console.log("currentGhost pic is " + currentGhost);
 
             // REVOL animation - should be 5 in first line
-            tl.to(elemContainer, 5, {rotation:spinPos[ranSpin], ease:Circ.easeOut})
+            tl.to(elemContainer, 5, {rotation:winPos, ease:Circ.easeOut})
                 //show spinMarker
                 .to(spinMarker, 2, {autoAlpha:1}, "-=2")
                 //show image
                 .to(currentGhost, 2, {autoAlpha:0.15})
                 .to(theTexts, 1, {autoAlpha:1}, "-=0.25")
-                .to(elemContainer, 0.75, {autoAlpha:0}, "-=1")
-                .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
+                .to(elemContainer, 0.75, {autoAlpha:0}, "-=1");
+                // .to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, "-=1");
+
+            // show the winHead if it's not the last time for that category
+            if (theTexts[winWord].length > 1) {
+                tl.to(winHead, 0.75, {autoAlpha:0.5, scale:1.05}, 7);
+            }
+
             tl.addCallback(animateCentreTexts, "-=1.5");
 
             //play muzak sound loop
@@ -312,10 +315,6 @@ $(function(){
             }
 
                 deliverText(theTexts[winWord].pop(), 360);
-                // deliverText(theTexts[winWord].pop(), 350);
-
-                //for TESTING ONLY:
-                //deliverText(theTexts.equality[7], 350);
 
         }
 
@@ -324,17 +323,16 @@ $(function(){
             muzak.setVolume(0).fadeTo(10, 2000);
         }
 
-        console.log("winWord is " + winWord + " & its array length is " + theTexts[winWord].length);
+        // Remove the winWord & corresponding winPos & winHead if there are no texts left to display in that category
+        if (theTexts[winWord] === undefined){
+            showMessage();
+        }
+        else if (theTexts[winWord].length === 1) {
 
-        // Remove the winWord if there are no texts left to display in that category
-        // if (theTexts[winWord].length === 1) {
+            expireWord(winWord, winHead, winPos);
 
-        //     winWords = _.without(winWords, winWord);
-
-        //     console.log("REMOVE --- " + winWord + " --- because this is the last text in its array");
-        //     console.log("The winWords length: " + winWords.length);
-        //     console.log("The winWords: " + winWords);
-        // }
+            expiryDue = true;
+        }
 
     }
 
@@ -344,15 +342,23 @@ $(function(){
          //fade out any pic that is in the centre
         TweenMax.to(currentGhost, 1, {autoAlpha:0, delay:0.75});
 
-        // muzak.fadeOut(2000, function() {
-        //     muzak.stop();
-        // });
+    }
+
+    function expireWord(winWord, winHead, winPos){
+
+        winWords = _.without(winWords, winWord);
+        winHeads = _.without(winHeads, winHead);
+        spinPos = _.without(spinPos, winPos);
+        
+
+        console.log("REMOVE --- " + winWord + " --- because this is the last text in its array. Also remove winPos: " + winPos);
+        // console.log("The winWords array length: " + winWords.length + " | spinPos length: " +spinPos.length + " | winHeads length: " + winHeads.length);
+        console.log("The winWords are now: " + winWords);
     }
 
     function showMessage(){
-        // console.log("Nothing left in that one so showMessage and reset!");
-        TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true});
-        // TweenMax.to(message, 0.5, {autoAlpha:1, repeat:1, repeatDelay:1.5, yoyo:true, onComplete:reset});
+        // console.log("Nothing left in that one so showMessage!");
+        TweenMax.to(message, 0.5, {autoAlpha:1});
     }
 
 });
