@@ -1,6 +1,8 @@
-### Revolution of Words
+## Revolution of Words
 
-An interactive work of e-lit. A collaboration by runran and crissxross for http://www.remixworx.net
+An interactive work of e-lit. A collaboration by runran and crissxross for http://remixworx.com/
+
+####[In memory of Randy Adams (aka runran), 1951-2014](http://remixworx.com/?tag=randy-adams)
 
 Made possible thanks to a CodePen by GreenSock http://codepen.io/GreenSock/pen/sxdfe
 
