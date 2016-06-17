@@ -248,6 +248,7 @@ $(function(){
             }
 
             tl.addCallback(animateCentreTexts, "-=1.5");
+
             //play muzak sound loop
             if ( muzak.isPaused() ) {
                 console.log("sound was paused");
